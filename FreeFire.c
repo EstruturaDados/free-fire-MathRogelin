@@ -75,6 +75,24 @@ void removerItem() {
     }
 }
 
+
+// Função para listar todos os itens
+void listarItens() {
+    printf("\n--- Itens na Mochila ---\n");
+
+    if (totalItens == 0) {
+        printf("A mochila está vazia.\n");
+        return;
+    }
+
+    for (int i = 0; i < totalItens; i++) {
+        printf("%d. Nome: %s | Tipo: %s | Quantidade: %d\n",
+               i + 1, mochila[i].nome, mochila[i].tipo, mochila[i].quantidade);
+    }
+}
+
+
+
 int main() {
     // Menu principal com opções:
     // 1. Adicionar um item
