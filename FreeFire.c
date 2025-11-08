@@ -93,6 +93,31 @@ void listarItens() {
 
 
 
+// Função de busca sequencial
+void buscarItem() {
+    if (totalItens == 0) {
+        printf("\nA mochila está vazia!\n");
+        return;
+    }
+
+    char nome[30];
+    printf("\n--- Buscar Item ---\n");
+    printf("Digite o nome do item: ");
+    scanf(" %[^\n]", nome);
+
+    for (int i = 0; i < totalItens; i++) {
+        if (strcmp(mochila[i].nome, nome) == 0) {
+            printf("\nItem encontrado:\n");
+            printf("Nome: %s\nTipo: %s\nQuantidade: %d\n",
+                   mochila[i].nome, mochila[i].tipo, mochila[i].quantidade);
+            return;
+        }
+    }
+
+    printf("\nItem não encontrado.\n");
+}
+
+
 int main() {
     // Menu principal com opções:
     // 1. Adicionar um item
