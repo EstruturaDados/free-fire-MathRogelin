@@ -130,6 +130,42 @@ int main() {
     // A estrutura switch trata cada opção chamando a função correspondente.
     // A ordenação e busca binária exigem que os dados estejam bem organizados.
 
+    int opcao;
+
+    do {
+        printf("\n=== Sistema de Inventário ===\n");
+        printf("1. Adicionar item\n");
+        printf("2. Remover item\n");
+        printf("3. Listar itens\n");
+        printf("4. Buscar item\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                inserirItem();
+                listarItens();
+                break;
+            case 2:
+                removerItem();
+                listarItens();
+                break;
+            case 3:
+                listarItens();
+                break;
+            case 4:
+                buscarItem();
+                break;
+            case 0:
+                printf("\nEncerrando o sistema...\n");
+                break;
+            default:
+                printf("\nOpção inválida.\n");
+        }
+
+    } while (opcao != 0);
+
     return 0;
 }
 
